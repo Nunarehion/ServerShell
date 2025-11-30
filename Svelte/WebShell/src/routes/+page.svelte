@@ -90,7 +90,7 @@
 
   .page-container {
     display: grid;
-    grid-template-collumns: 1fr max-content;
+    grid-template-columns: minmax(0, 1fr) max-content;
     width: 100%;
     height: 100%;
     max-height: 100vh;
