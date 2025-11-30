@@ -62,7 +62,7 @@
     :global(hr) {
         border: none;
         height: 1px;
-        background: var(--light-bg);
+        background: var(--clr-gray);
     }
 
     :global(button) {
