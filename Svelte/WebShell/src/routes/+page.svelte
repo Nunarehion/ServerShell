@@ -71,10 +71,8 @@
       placeholder="Введите команду (ls, echo)..."
       autofocus
     />
-    <button on:click={sendCommand}>Отправить</button>
+    <button on:click={sendCommand}>send</button>
   </div>
-
-  <hr />
 
   <button class="open-xterm-btn" on:click={openInteractiveTerminal}>
     Открыть интерактивный xterm (для nano, htop)
@@ -91,6 +89,7 @@
   .page-container {
     display: grid;
     grid-template-rows: 1fr max-content;
+    gap: .5rem;
     width: 100%;
     height: 100%;
     max-height: 100vh;
