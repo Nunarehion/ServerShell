@@ -50,7 +50,7 @@
         margin: 0;
         padding: 0;
         background-color: var(--light-bg);
-       
+        width: 100vw;
         font-family: sans-serif;
     }
     .layout 
