@@ -9,9 +9,9 @@
 <div class="layout">
   <!-- Первая колонка -->
   <SideBar class="sidebar">
-    <hr style="margin-bottom: 2rem;" />
+    <hr style="margin: 1rem 0;" />
     <LinkItem url="/" icon="/icon-atom.svg"></LinkItem>
-    <hr style="margin: 2rem 0;" />
+    <hr style="margin: 1rem 0;" />
     <div class="items">
       <LinkItem url="/files" icon="/icon-folder.svg"></LinkItem>
       <LinkItem url="/files" icon="/icon-folder.svg"></LinkItem>
@@ -61,7 +61,7 @@
     }
     :global(hr) {
         border: none;
-        height: 1px;
+        height: .1px;
         background: var(--clr-gray);
     }
 
