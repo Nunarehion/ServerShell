@@ -94,7 +94,6 @@
     height: 100%;
     max-height: 100vh;
     max-width: 100vw;
-    margin: 2rem auto;
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
