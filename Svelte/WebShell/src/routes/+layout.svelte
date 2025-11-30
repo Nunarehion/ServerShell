@@ -31,7 +31,7 @@
     // Сброс
     :global(*) {box-sizing: border-box}
     :global(body) {margin: 0; padding: 0}
-    :global(*) {outline: .1px solid orangered}
+    //:global(*) {outline: .1px solid orangered}
 
     // < Переменные > //
     :global(:root) {
