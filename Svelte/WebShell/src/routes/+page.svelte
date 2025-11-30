@@ -111,7 +111,6 @@
     font-family: monospace;
     border-radius: 4px;
     margin-bottom: 1rem;
-    border: 2px solid red;
   }
   pre {
     margin: 0;
