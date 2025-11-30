@@ -134,13 +134,15 @@
 <div class="file-manager">
   <div class="header">
     <div class="path-controls">
+        <code>{currentPath}</code>
+        
         <button on:click={goBack} disabled={currentPath === '/'}>
-            Назад
+            ←
         </button>
-        Текущий путь: <code>{currentPath}</code>
+        
     </div>
     <div class="actions">
-        <button on:click={() => loadDirectory(currentPath)}>Обновить</button>
+        <button on:click={() => loadDirectory(currentPath)}>↻</button>
         
         <div class="action-dropdown">
             <button class="primary-action">+</button>
