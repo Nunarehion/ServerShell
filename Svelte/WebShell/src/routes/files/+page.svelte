@@ -1,4 +1,3 @@
-<!-- src/lib/components/FileManager.svelte -->
 <script>
   import { onMount } from "svelte";
 
@@ -85,7 +84,6 @@
   }
 
   async function uploadFile(event) {
-    // Исправление: event.target.files — это FileList, берем первый элемент [0]
     const file = event.target.files[0]; 
     if (!file) return;
 
@@ -136,12 +134,13 @@
     <div class="path-controls">
         <code>{currentPath}</code>
         
-        <button on:click={goBack} disabled={currentPath === '/'}>
-            ←
-        </button>
+        
         
     </div>
     <div class="actions">
+        <button on:click={goBack} disabled={currentPath === '/'}>
+            ←
+        </button>
         <button on:click={() => loadDirectory(currentPath)}>↻</button>
         
         <div class="action-dropdown">
