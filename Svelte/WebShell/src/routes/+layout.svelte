@@ -58,7 +58,11 @@
         font-family: sans-serif;
         box-sizing: border-box;
         overflow: hidden;
-       
+    }
+    :global(hr) {
+        border: none;
+        width: .1px;
+        background: var(--light-bg);
     }
 
     :global(button) {
