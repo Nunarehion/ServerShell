@@ -4,7 +4,7 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "concurrently --kill-others-on-fail \"vite dev\" \"node src/lib/server/pty-ws.js\"",
+		"dev": "concurrently --kill-others-on-fail \"vite dev --host 0.0.0.0\" \"node src/lib/server/pty-ws.js\"",
 		"build": "vite build",
 		"preview": "vite preview",
 		"start": "node src/lib/server/pty-ws.js",
