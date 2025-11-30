@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "MucY/pZXzMBYn1Zq/DCgyacTvC9KEnIjQQktD/NWcCM=",
+  "Source": "ServerShell",
+  "BasePath": "_content/ServerShell",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

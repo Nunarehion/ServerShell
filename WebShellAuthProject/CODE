@@ -1,0 +1,6 @@
+dotnet tool install --global dotnet-ef
+cd ~ServerShell
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+
+dotnet ef migrations add InitialIdentitySetup
+dotnet ef database update

@@ -1,0 +1,74 @@
+<script>
+  import SideBar from "$lib/components/sidebar/SideBar.svelte";
+  import LinkItem from "$lib/components/sidebar/LinkItem.svelte";
+  let { children } = $props();
+</script>
+
+<!-- (HTML) -->
+
+<div class="layout">
+  <!-- Первая колонка -->
+  <SideBar class="sidebar">
+    <hr style="margin-bottom: 2rem;" />
+    <LinkItem url="/" icon="/icon-atom.svg"></LinkItem>
+    <hr style="margin: 2rem 0;" />
+    <div class="items">
+      <LinkItem url="/files" icon="/icon-folder.svg"></LinkItem>
+      <LinkItem url="/files" icon="/icon-folder.svg"></LinkItem>
+      <LinkItem url="/files" icon="/icon-folder.svg"></LinkItem>
+    </div>
+  </SideBar>
+
+  <!-- Вторая колонка -->
+  <main class="content-area">
+    {@render children()}
+  </main>
+</div>
+
+<!-- (HTML) -->
+
+<style lang="stylus">
+    // Сброс
+    :global(*) {box-sizing: border-box}
+    :global(body) {margin: 0; padding: 0}
+
+    // < Переменные > //
+    :global(:root) {
+        // <-- цвета --> //
+        --second-bg: #17181f;
+        --dark-bg: #101218;
+        --light-bg: #1d1e26;
+        --clr-gray: #adafb8;
+        --clr-white: white;
+        --clr-red: #e11d48;
+        --clr-hover: #2f2d39;
+
+        // <-- размеры --> //
+        --sidebar-width: 76px
+    }
+      :global(body) {
+        margin: 0;
+        padding: 0;
+        background-color: var(--light-bg);
+       
+        font-family: sans-serif;
+    }
+    .layout 
+        display: grid
+        width: 100%
+        height: 100vh
+        grid-template-columns: var(--sidebar-width) 1fr 
+        grid-template-rows: 1fr
+        
+        .content-area
+            grid-column: 2 / 3
+            grid-row: 1 / 2
+            padding: 1rem
+        .items
+            display: grid
+            gap: .5rem
+            padding: .4rem
+            background: var(--light-bg)
+            box-shadow: inset 0px 0px 0px .1px var(--clr-red)
+        
+</style>
