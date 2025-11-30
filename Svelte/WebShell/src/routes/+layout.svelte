@@ -54,6 +54,7 @@
         height: 100vh;
         font-family: sans-serif;
         box-sizing: border-box;
+        overflow: hidden;
     }
     .layout 
         display: grid
