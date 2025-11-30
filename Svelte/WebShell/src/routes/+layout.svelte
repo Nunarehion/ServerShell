@@ -51,12 +51,13 @@
         padding: 0;
         background-color: var(--light-bg);
         width: 100vw;
+        height: 100vh;
         font-family: sans-serif;
     }
     .layout 
         display: grid
         width: 100%
-        height: 100vh
+        height: 100%
         grid-template-columns: var(--sidebar-width) 1fr 
         grid-template-rows: 1fr
         
