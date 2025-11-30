@@ -96,6 +96,7 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   }
   .term {
+    width: 100%;
     background: #1d1e26;
     color: #e0e0e0;
     padding: 1rem;
