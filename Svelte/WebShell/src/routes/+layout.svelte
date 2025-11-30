@@ -61,7 +61,7 @@
     }
     :global(hr) {
         border: none;
-        height: .1px;
+        height: 1px;
         background: var(--light-bg);
     }
 
