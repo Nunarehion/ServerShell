@@ -62,11 +62,14 @@
 
     :global(button) {
         display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 100;
         padding: .5rem;
         background: none;
         box-shadow: 0 0 1px #ffffff88;
         border: none;
-        border-radius: .5rem;
+        border-radius: .25rem;
         color: #ffffff88;
         height: 100%;
       
