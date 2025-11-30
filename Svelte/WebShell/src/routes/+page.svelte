@@ -89,7 +89,8 @@
 <style>
 
   .page-container {
-    position: relative;
+    display: grid;
+    grid-template-collumns: 1fr max-content;
     width: 100%;
     height: 100%;
     max-height: 100vh;
@@ -118,9 +119,6 @@
     word-wrap: break-word;
   }
   .input-area {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
     display: flex;
     gap: 10px;
     margin-bottom: 1rem;
