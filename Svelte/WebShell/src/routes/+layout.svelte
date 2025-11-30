@@ -59,6 +59,16 @@
         overflow: hidden;
        
     }
+
+    :global(button) {
+        display: flex;
+        padding: .5rem;
+        background: none;
+        border: 1px solid;
+        border-radius: .5rem;
+        color: var(--clr-gray);
+      
+    }
     .layout 
         display: grid
         width: 100%
