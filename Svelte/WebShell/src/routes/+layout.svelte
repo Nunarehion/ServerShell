@@ -35,6 +35,7 @@
 
     // < Переменные > //
     :global(:root) {
+        font-size: 10px;
         // <-- цвета --> //
         --second-bg: #17181f;
         --dark-bg: #101218;
