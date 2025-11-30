@@ -90,6 +90,7 @@
 
   .page-container {
     width: 100%;
+    height: 100%;
     margin: 2rem auto;
     padding: 1rem;
     border-radius: 8px;
