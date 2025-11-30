@@ -51,10 +51,12 @@
         padding: 0;
         background-color: var(--light-bg);
         width: 100vw;
+        width: 100dvw;
         height: 100vh;
         font-family: sans-serif;
         box-sizing: border-box;
         overflow: hidden;
+       
     }
     .layout 
         display: grid
