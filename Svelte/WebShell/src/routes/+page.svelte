@@ -89,7 +89,7 @@
 <style>
 
   .page-container {
-    max-width: 900px;
+    width: 100%;
     margin: 2rem auto;
     padding: 1rem;
     border-radius: 8px;
