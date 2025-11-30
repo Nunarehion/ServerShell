@@ -64,9 +64,10 @@
         display: flex;
         padding: .5rem;
         background: none;
-        box-shadow: 0 0 0 3px #ffffff55;
+        box-shadow: 0 0 1px #ffffff88;
+        border: none;
         border-radius: .5rem;
-        color: #ffffff55;
+        color: #ffffff88;
         height: 100%;
       
     }
