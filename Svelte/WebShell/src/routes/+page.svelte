@@ -99,7 +99,7 @@
     width: 100%;
     background: #1d1e26;
     color: #e0e0e0;
-    padding: 1rem;
+    padding: 1rem 0;
     height: 40vh;
     overflow: auto;
     font-family: monospace;
