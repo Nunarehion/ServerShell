@@ -64,9 +64,10 @@
         display: flex;
         padding: .5rem;
         background: none;
-        border: 1px solid;
+        box-shadow: 0 0 0 3px #ffffff55;
         border-radius: .5rem;
-        color: var(--clr-gray);
+        color: #ffffff55;
+        height: 100%;
       
     }
     .layout 
