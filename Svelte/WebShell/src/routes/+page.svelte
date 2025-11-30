@@ -89,6 +89,7 @@
 <style>
 
   .page-container {
+    position: relative;
     width: 100%;
     height: 100%;
     margin: 2rem auto;
@@ -115,6 +116,9 @@
     word-wrap: break-word;
   }
   .input-area {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
     display: flex;
     gap: 10px;
     margin-bottom: 1rem;
