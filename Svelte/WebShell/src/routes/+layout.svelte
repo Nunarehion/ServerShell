@@ -89,7 +89,7 @@
         .items
             display: grid
             gap: .5rem
-            padding: .4rem
+            padding: 2rem
             background: var(--light-bg)
             box-shadow: inset 0px 0px 0px .1px var(--clr-red)
         
