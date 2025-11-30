@@ -189,7 +189,7 @@
 <style>
   .file-manager {
     border-radius: 8px;
-    padding: 1rem;
+    padding: .5rem;
     color: var(--clr-white);
     margin-top: 1rem;
   }
@@ -198,7 +198,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
+    padding: .25rem;
   }
   .path-controls {
       display: flex;
@@ -251,7 +251,7 @@
     flex-direction: column;
   }
   .file-entry {
-    padding: 0.5rem;
+    padding: 0.25rem;
     cursor: pointer;
     display: flex;
     align-items: center;
