@@ -100,7 +100,7 @@
     background: #1d1e26;
     color: #e0e0e0;
     padding: 1rem 0;
-    height: 40vh;
+    height: 100%;
     overflow: auto;
     font-family: monospace;
     border-radius: 4px;
