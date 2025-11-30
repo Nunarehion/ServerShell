@@ -64,11 +64,11 @@
         width: 100%
         height: 100%
         grid-template-columns: var(--sidebar-width) 1fr 
-        grid-template-rows: 1fr
+        
         
         .content-area
             grid-column: 2 / 3
-            grid-row: 1 / 2
+            
             padding: 1rem
         .items
             display: grid
