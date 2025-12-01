@@ -127,6 +127,7 @@
     border: 1px solid #e7e7f011;
     color: #ffffff99;
     overflow: hidden;
+    transition: all 1s easy;
     
     &:focus-within {
       bottom: 0;
