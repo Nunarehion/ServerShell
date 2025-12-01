@@ -1,12 +1,15 @@
+<!-- FileEntry.svelte (Исправленная версия) -->
 <script>
     const { file, onNavigate, currentPath } = $props();
 
-    function getDownloadUrl() {
+    // Используем $derived, чтобы URL динамически обновлялся 
+    // при любом изменении currentPath или file.type/file.name
+    const downloadUrl = $derived(() => {
         if (file.type === 'file') {
             return `/api/files?path=${encodeURIComponent(currentPath)}&download=${encodeURIComponent(file.name)}`;
         }
         return '#';
-    }
+    });
 </script>
 
 {#if file.type === 'directory'}
@@ -15,7 +18,8 @@
         <span class="name">{file.name}</span>
     </div>
 {:else}
-    <a class="file-entry file-link" href={getDownloadUrl()} download={file.name}>
+    <!-- Используем реактивную переменную downloadUrl -->
+    <a class="file-entry file-link" href={downloadUrl} download={file.name}>
         <span class="icon">📄</span>
         <span class="name">{file.name}</span>
     </a>
