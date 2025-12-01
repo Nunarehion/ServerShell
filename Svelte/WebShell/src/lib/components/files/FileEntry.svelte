@@ -1,9 +1,5 @@
-<!-- FileEntry.svelte (Исправленная версия) -->
 <script>
     const { file, onNavigate, currentPath } = $props();
-
-    // Используем $derived, чтобы URL динамически обновлялся 
-    // при любом изменении currentPath или file.type/file.name
     const downloadUrl = $derived(() => {
         if (file.type === 'file') {
             return `/api/files?path=${encodeURIComponent(currentPath)}&download=${encodeURIComponent(file.name)}`;
