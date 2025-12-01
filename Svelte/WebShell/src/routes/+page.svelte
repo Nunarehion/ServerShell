@@ -60,6 +60,9 @@
 </script>
 
 <div class="page-container">
+    <button class="open-xterm-btn" on:click={openInteractiveTerminal}>
+    Открыть интерактивный xterm (для nano, htop)
+  </button>
   <div class="term" bind:this={termDiv}>
     <pre>{cleanOutput}</pre>
   </div>
@@ -73,10 +76,6 @@
     />
     <button on:click={sendCommand}>send</button>
   </div>
-
-  <button class="open-xterm-btn" on:click={openInteractiveTerminal}>
-    Открыть интерактивный xterm (для nano, htop)
-  </button>
 </div>
 
 <InteractiveTerminal
