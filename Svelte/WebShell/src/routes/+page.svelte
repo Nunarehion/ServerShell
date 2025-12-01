@@ -87,7 +87,7 @@
 
   .page-container {
     display: grid;
-    grid-template-rows: 1fr max-content;
+    grid-template-rows: max-content 1fr;
     gap: .5rem;
     width: 100%;
     height: 100%;
