@@ -149,6 +149,7 @@
   input:focus {
     outline: none;
     padding: 4rem 2rem 4rem 2rem;
+}
 
 
   button {
