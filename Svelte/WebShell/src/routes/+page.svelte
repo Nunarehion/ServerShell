@@ -148,6 +148,7 @@
 
   input:focus {
     outline: none;
+    padding-bottom: 3rem;
   }
 
   button {
