@@ -52,10 +52,8 @@
         margin: 0;
         padding: 0;
         background-color: var(--light-bg);
+        max-width: 100vw;
         width: 100vw;
-        width: 100dvw;
-        height: 100vh;
-        height: 100dvh;
         height: 100%;
         font-family: sans-serif;
         box-sizing: border-box;
