@@ -53,8 +53,8 @@
         max-width: 100vw;
         width: 100vw;
         width: 100dvw;
-        height: 100vw;
-        height: 100dvw;
+        height: 100vh;
+        height: 100dvh;
         font-family: sans-serif;
         box-sizing: border-box;
         overflow: hidden;
