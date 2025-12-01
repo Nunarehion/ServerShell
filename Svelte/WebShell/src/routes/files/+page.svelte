@@ -1,7 +1,7 @@
-<!-- FileManager.svelte -->
 <script>
   import { onMount } from "svelte";
-  import FileEntry from "$lib/components/files/FileEntry.svelte";
+  import FileEntry from "./FileEntry.svelte"; 
+
   let currentPath = "/";
   let files = $state([]);
   let errorMessage = $state(""); 
@@ -33,9 +33,10 @@
   }
 
   function goBack() {
-      const parentDir = files.find(f => f.name === '..');
-      if (parentDir) {
-          loadDirectory(parentDir.path);
+      // ИСПРАВЛЕНИЕ: Вычисляем родительский путь из текущего пути
+      if (currentPath !== '/') {
+          const parentPath = currentPath.substring(0, currentPath.lastIndexOf('/')) || '/';
+          loadDirectory(parentPath);
       }
   }
 
@@ -78,7 +79,7 @@
   }
 
   async function uploadFile(event) {
-    const file = event.target.files[0]; 
+    const file = event.target.files[0]; // Исправлено получение файла
     if (!file) return;
 
     const formData = new FormData();
@@ -125,6 +126,7 @@
         <code>{currentPath}</code>
     </div>
     <div class="actions">
+        <!-- Кнопка теперь отключена, если мы в корневом каталоге -->
         <button on:click={goBack} disabled={currentPath === '/'}>
             ←
         </button>
@@ -149,8 +151,9 @@
   {/if}
 
   <div class="file-list">
-    <!-- Используем компонент FileEntry здесь -->
     {#each files as file (file.path)}
+      <!-- Мы больше не ищем '..' в списке, так как логика "назад" в goBack() -->
+      <!-- Но оставим проверку, если бэкенд все еще может его возвращать в других случаях -->
       {#if file.name !== '..'}
           <FileEntry {file} onNavigate={handleEntryClick} currentPath={currentPath} />
       {/if}
@@ -159,6 +162,7 @@
 </div>
 
 <style>
+  /* Стили CSS */
   .file-manager {
     border-radius: 8px;
     padding: .5rem;
