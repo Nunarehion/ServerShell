@@ -94,7 +94,8 @@
     height: 100%;
     max-height: 100vh;
     max-width: 100vw;
-    max-height: calc(100vh - 5rem)
+    max-height: calc(100vh - 10rem)
+    max-height: calc(100dvh - 10rem)
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
