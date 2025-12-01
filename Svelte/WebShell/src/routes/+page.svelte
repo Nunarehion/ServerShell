@@ -126,11 +126,14 @@
     background-color: #1d1e26;
     border: 1px solid #e7e7f011;
     color: #ffffff99;
+    overflow: scroll;
   }
   input {
     flex-grow: 1;
     padding: 1rem;
     font-family: monospace;
+    background: none;
+    color: inherit;
   }
 
   input:focus {
