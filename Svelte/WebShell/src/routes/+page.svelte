@@ -119,10 +119,9 @@
     position: fixed;
     display: grid;
     grid-template-columns: 1fr max-content;
-    width: 100%;
     bottom: 0;
-    left: 0;
-    margin: 1rem;
+    left: 2rem;
+    right: 2rem;
     border-radius: 3rem;
     background-color: #1d1e26;
     border: 1px solid #e7e7f011;
@@ -131,7 +130,7 @@
   }
   input {
     flex-grow: 1;
-    padding: 1rem;
+    padding: 2rem;
     font-family: monospace;
     background: none;
     color: inherit;
