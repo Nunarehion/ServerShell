@@ -84,7 +84,7 @@
   onClose={closeInteractiveTerminal}
 />
 
-<style>
+<style lang="stylus">
 
   .page-container {
     display: grid;
@@ -126,7 +126,7 @@
     background-color: #1d1e26;
     border: 1px solid #e7e7f011;
     color: #ffffff99;
-    overflow: scroll;
+    overflow: hidden;
   }
   input {
     flex-grow: 1;
@@ -140,9 +140,12 @@
 
   input:focus {
     outline: none;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    &^ {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border: 1px solid red;
+}
   }
   button {
     padding: 0.75rem 1.5rem;
