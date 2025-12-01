@@ -138,7 +138,7 @@
 
   input {
     flex-grow: 1;
-    padding: 1.5rem 2rem;
+    padding: 2rem 1.5rem 2rem 1.5rem;
     font-family: monospace;
     background: none;
     color: inherit;
@@ -148,8 +148,8 @@
 
   input:focus {
     outline: none;
-    padding-bottom: 3rem;
-  }
+    padding: 4rem 2rem 4rem 2rem;
+
 
   button {
     padding: 0.75rem 1.5rem;
