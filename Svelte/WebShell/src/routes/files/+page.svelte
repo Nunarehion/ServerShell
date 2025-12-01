@@ -26,6 +26,7 @@
       const data = await response.json();
       files = data.files;
       currentPath = data.currentPath;
+      alert(currentPatch)
     } catch (error) {
       errorMessage = error.message;
       clearMessages();
@@ -33,7 +34,6 @@
   }
 
   function goBack() {
-      // ИСПРАВЛЕНИЕ: Вычисляем родительский путь из текущего пути
       if (currentPath !== '/') {
           const parentPath = currentPath.substring(0, currentPath.lastIndexOf('/')) || '/';
           loadDirectory(parentPath);
