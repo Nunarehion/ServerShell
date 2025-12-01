@@ -61,7 +61,7 @@
 
 <div class="page-container">
     <button class="open-xterm-btn" on:click={openInteractiveTerminal}>
-    Открыть интерактивный xterm (для nano, htop)
+    Открыть интерактивный xterm
   </button>
   <div class="term" bind:this={termDiv}>
     <pre>{cleanOutput}</pre>
