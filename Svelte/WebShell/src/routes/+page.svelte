@@ -119,7 +119,7 @@
     position: fixed;
     display: grid;
     grid-template-columns: 1fr max-content;
-    bottom: 0;
+    bottom: 1rem;
     left: 2rem;
     right: 2rem;
     border-radius: 3rem;
@@ -135,10 +135,14 @@
     background: none;
     color: inherit;
     border: none;
+    transition: all 1s easy;
   }
 
   input:focus {
-    outline: none
+    outline: none;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
   button {
     padding: 0.75rem 1.5rem;
