@@ -132,13 +132,13 @@
       bottom: 0;
       left: 0;
       right: 0;
-      border: 1px solid red;
+      border-radius: 3rem 3rem 0 0;
     }
   }
 
   input {
     flex-grow: 1;
-    padding: 2rem;
+    padding: 1.5rem 2rem;
     font-family: monospace;
     background: none;
     color: inherit;
