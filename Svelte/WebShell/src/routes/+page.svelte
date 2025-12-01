@@ -127,7 +127,15 @@
     border: 1px solid #e7e7f011;
     color: #ffffff99;
     overflow: hidden;
+    
+    &:focus-within {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border: 1px solid red;
+    }
   }
+
   input {
     flex-grow: 1;
     padding: 2rem;
@@ -140,13 +148,8 @@
 
   input:focus {
     outline: none;
-    &^ {
-      bottom: 0;
-      left: 0;
-      right: 0;
-      border: 1px solid red;
-}
   }
+
   button {
     padding: 0.75rem 1.5rem;
     background-color: #007acc;
