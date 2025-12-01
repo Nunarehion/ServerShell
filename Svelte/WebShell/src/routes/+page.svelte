@@ -134,6 +134,7 @@
     font-family: monospace;
     background: none;
     color: inherit;
+    border: none;
   }
 
   input:focus {
@@ -142,9 +143,9 @@
   button {
     padding: 0.75rem 1.5rem;
     background-color: #007acc;
-    color: #fff;
+    color: #ffffff99;
     border: none;
-    border-radius: 4px;
+    height: 100%;
     cursor: pointer;
   }
   .open-xterm-btn {
