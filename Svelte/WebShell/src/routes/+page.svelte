@@ -121,6 +121,9 @@
     margin-bottom: 1rem;
   }
   input {
+    position: fixed;
+    bottom: 0;
+    left: 0;
     flex-grow: 1;
     padding: 0.75rem;
     font-family: monospace;
