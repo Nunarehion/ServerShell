@@ -117,7 +117,8 @@
   }
   .input-area {
     position: fixed;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr max-content
     width: 100%;
     bottom: 0;
     left: 0;
