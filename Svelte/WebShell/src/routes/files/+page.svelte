@@ -26,7 +26,6 @@
       const data = await response.json();
       files = data.files;
       currentPath = data.currentPath;
-      alert(currentPath)
     } catch (error) {
       errorMessage = error.message;
       clearMessages();
