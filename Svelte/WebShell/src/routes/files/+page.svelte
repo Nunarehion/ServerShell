@@ -1,10 +1,12 @@
+<!-- FileManager.svelte -->
 <script>
   import { onMount } from "svelte";
+  import FileEntry from "./FileEntry.svelte"; // Импортируем компонент FileEntry
 
   let currentPath = "/";
-  let files = [];
-  let errorMessage = "";
-  let successMessage = ""; 
+  let files = $state([]);
+  let errorMessage = $state(""); 
+  let successMessage = $state(""); 
 
   function clearMessages() {
       setTimeout(() => {
@@ -31,24 +33,17 @@
     }
   }
 
-  function getDownloadUrl(file) {
-      if (file.type === 'file') {
-          return `/api/files?path=${encodeURIComponent(currentPath)}&download=${encodeURIComponent(file.name)}`;
+  function goBack() {
+      const parentDir = files.find(f => f.name === '..');
+      if (parentDir) {
+          loadDirectory(parentDir.path);
       }
-      return '#';
   }
 
   function handleEntryClick(file) {
     if (file.type === "directory") {
       loadDirectory(file.path);
     } 
-  }
-
-  function goBack() {
-      const parentDir = files.find(f => f.name === '..');
-      if (parentDir) {
-          loadDirectory(parentDir.path);
-      }
   }
 
   async function createNewFolder() {
@@ -113,16 +108,12 @@
     clearMessages();
   }
   
-  // --- НОВАЯ ФУНКЦИЯ ДЛЯ ЗАПУСКА Скрытого input ---
   function triggerFileInput() {
-      // Это безопасный способ вызова клика по скрытому элементу в Svelte
       const fileInput = document.getElementById('fileInput');
       if (fileInput) {
           fileInput.click();
       }
   }
-  // --- КОНЕЦ НОВЫХ ФУНКЦИЙ ---
-
 
   onMount(() => {
     loadDirectory("/");
@@ -133,25 +124,18 @@
   <div class="header">
     <div class="path-controls">
         <code>{currentPath}</code>
-        
-        
-        
     </div>
     <div class="actions">
         <button on:click={goBack} disabled={currentPath === '/'}>
             ←
         </button>
         <button on:click={() => loadDirectory(currentPath)}>↻</button>
-        
+
         <div class="action-dropdown">
             <button class="primary-action">+</button>
             <div class="dropdown-content">
                 <button on:click={createNewFolder}>Новая папка 📁</button>
-                
-                <!-- Скрытый input type="file" -->
                 <input type="file" id="fileInput" style="display: none;" on:change={uploadFile} />
-                
-                <!-- Кнопка с ПРАВИЛЬНЫМ обработчиком Svelte on:click -->
                 <button on:click={triggerFileInput}>Загрузить файл 📄</button>
             </div>
         </div>
@@ -166,27 +150,17 @@
   {/if}
 
   <div class="file-list">
+    <!-- Используем компонент FileEntry здесь -->
     {#each files as file (file.path)}
       {#if file.name !== '..'}
-          {#if file.type === 'directory'}
-            <div class="file-entry" on:click={() => handleEntryClick(file)}>
-                <span class="icon">📁</span>
-                <span class="name">{file.name}</span>
-            </div>
-          {:else}
-            <a class="file-entry file-link" href={getDownloadUrl(file)} download={file.name}>
-                <span class="icon">📄</span>
-                <span class="name">{file.name}</span>
-            </a>
-          {/if}
+          <FileEntry {file} onNavigate={handleEntryClick} currentPath={currentPath} />
       {/if}
     {/each}
   </div>
 </div>
 
-
-
 <style>
+  /* Стили CSS */
   .file-manager {
     border-radius: 8px;
     padding: .5rem;
@@ -249,26 +223,6 @@
   .file-list {
     display: flex;
     flex-direction: column;
-  }
-  .file-entry {
-    padding: 0.25rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    transition: background-color 0.2s;
-  }
-  .file-entry:hover {
-    background-color: var(--clr-hover);
-  }
-  .file-link {
-    text-decoration: none; 
-    color: inherit;
-  }
-  .icon {
-    margin-right: 1rem;
-  }
-  .name {
-    font-family: monospace;
   }
   .error {
     color: red;
