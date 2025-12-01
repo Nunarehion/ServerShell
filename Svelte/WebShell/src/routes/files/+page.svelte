@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import FileEntry from "./FileEntry.svelte"; 
+  import FileEntry from "$lib/components/files/FileEntry.svelte"; 
 
   let currentPath = "/";
   let files = $state([]);
