@@ -1,7 +1,7 @@
 <!-- FileManager.svelte -->
 <script>
   import { onMount } from "svelte";
-  import FileEntry from "./FileEntry.svelte"; // Импортируем компонент FileEntry
+  import FileEntry from "./FileEntry.svelte";
 
   let currentPath = "/";
   let files = $state([]);
@@ -160,7 +160,6 @@
 </div>
 
 <style>
-  /* Стили CSS */
   .file-manager {
     border-radius: 8px;
     padding: .5rem;
