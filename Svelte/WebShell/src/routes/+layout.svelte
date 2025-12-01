@@ -54,7 +54,7 @@
         background-color: var(--light-bg);
         max-width: 100vw;
         width: 100vw;
-        height: 90dvh;
+        height: 100%;
         font-family: sans-serif;
         box-sizing: border-box;
         overflow: hidden;
