@@ -152,8 +152,6 @@
 
   <div class="file-list">
     {#each files as file (file.path)}
-      <!-- Мы больше не ищем '..' в списке, так как логика "назад" в goBack() -->
-      <!-- Но оставим проверку, если бэкенд все еще может его возвращать в других случаях -->
       {#if file.name !== '..'}
           <FileEntry {file} onNavigate={handleEntryClick} currentPath={currentPath} />
       {/if}
