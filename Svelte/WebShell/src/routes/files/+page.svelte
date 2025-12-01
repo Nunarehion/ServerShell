@@ -1,7 +1,6 @@
 <!-- FileManager.svelte -->
 <script>
   import { onMount } from "svelte";
-  import  from "./";
   import FileEntry from "$lib/components/files/FileEntry.svelte";
   let currentPath = "/";
   let files = $state([]);
