@@ -52,11 +52,13 @@
         background-color: var(--light-bg);
         max-width: 100vw;
         width: 100vw;
-        height: 100%;
+        width: 100dvw;
+        height: 100vw;
+        height: 100dvw;
         font-family: sans-serif;
         box-sizing: border-box;
         overflow: hidden;
-        border: 1px solid red;
+        
     }
     :global(hr) {
         border: none;
