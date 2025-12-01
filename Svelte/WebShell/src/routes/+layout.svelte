@@ -56,6 +56,7 @@
         width: 100dvw;
         height: 100vh;
         height: 100dvh;
+        height: 100%;
         font-family: sans-serif;
         box-sizing: border-box;
         overflow: hidden;
