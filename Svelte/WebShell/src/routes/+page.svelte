@@ -116,14 +116,15 @@
     word-wrap: break-word;
   }
   .input-area {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
     display: flex;
     gap: 10px;
     margin-bottom: 1rem;
   }
   input {
-    position: fixed;
-    bottom: 0;
-    left: 0;
     flex-grow: 1;
     padding: 0.75rem;
     font-family: monospace;
