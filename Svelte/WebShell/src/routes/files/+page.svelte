@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import FileEntry from "$lib/components/files/FileEntry.svelte"; 
 
-  let currentPath = "/";
+  let currentPath = $state("/");
   let files = $state([]);
   let errorMessage = $state(""); 
   let successMessage = $state(""); 
