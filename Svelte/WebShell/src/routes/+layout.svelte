@@ -58,6 +58,7 @@
         font-family: sans-serif;
         box-sizing: border-box;
         overflow: hidden;
+        border: 1px solid red;
     }
     :global(hr) {
         border: none;
