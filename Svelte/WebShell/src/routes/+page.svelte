@@ -117,22 +117,22 @@
   }
   .input-area {
     position: fixed;
+    display: flex;
     width: 100%;
     bottom: 0;
     left: 0;
-    display: flex;
-    gap: 10px;
-    margin-bottom: 1rem;
+    margin: 1rem;
+    border-radius: 3rem;
+    background-color: #1d1e26;
+    border: 1px solid #e7e7f011;
+    color: #ffffff99;
   }
   input {
     flex-grow: 1;
-    padding: 0.75rem;
+    padding: 1rem;
     font-family: monospace;
-    background-color: #1d1e26;
-    border: 1px solid #e7e7f011;
-    color: rgb(230, 232, 240);
-    border-radius: 4px;
   }
+
   input:focus {
     outline: none
   }
