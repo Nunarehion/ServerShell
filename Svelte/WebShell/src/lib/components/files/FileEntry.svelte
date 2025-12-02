@@ -88,7 +88,6 @@
 }
 
 .dropdown-content {
-  display: none;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
@@ -97,7 +96,10 @@
   right: 0;
 }
 .dropdown-content {
-   display: block;
+   display: none;
+}
+.dropdown-content.show {
+   display: block; 
 }
 
 .dropdown-content a {
@@ -109,10 +111,6 @@
 
 .dropdown-content a:hover {
   background-color: #f1f1f1;
-}
-
-.show {
-  display: block;
 }
 
 </style>
