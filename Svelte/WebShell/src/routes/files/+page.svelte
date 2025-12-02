@@ -172,7 +172,8 @@
     padding: .5rem;
     color: var(--clr-white);
     margin-top: 1rem;
-    max-height: 100%;
+    height: 100%;
+    max-height: 100svh;
     overflow: scroll;
   }
   .header {
