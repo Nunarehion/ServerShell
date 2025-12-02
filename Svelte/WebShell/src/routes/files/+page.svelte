@@ -225,6 +225,9 @@
   border-radius: 8px;
   
 }
+.actions {
+   display: flex;
+}
 .dropdown-content {
    display: none;
 }
