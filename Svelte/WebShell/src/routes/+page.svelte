@@ -144,8 +144,13 @@
     font-family: monospace;
     background: none;
     border: none;
+    color: white;
     transition: all 1s easy;
   }
+  input::placeholder {
+    color: white
+    opacity: .5
+ }
 
   input:focus {
     outline: none;
