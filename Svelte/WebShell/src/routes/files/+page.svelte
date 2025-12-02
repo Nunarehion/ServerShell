@@ -119,6 +119,8 @@
   });
 </script>
 
+<!-- (HTML) -->
+
 <div class="file-manager">
   <div class="header">
     <div class="path-controls">
@@ -161,13 +163,17 @@
   </div>
 </div>
 
+<!-- (HTML) -->
+
+
 <style>
-  /* Стили CSS */
   .file-manager {
     border-radius: 8px;
     padding: .5rem;
     color: var(--clr-white);
     margin-top: 1rem;
+    max-height: 100%;
+    overflow: scroll;
   }
   .header {
     display: flex;
