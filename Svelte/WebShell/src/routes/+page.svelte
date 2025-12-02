@@ -154,7 +154,7 @@
 
   input:focus {
     outline: none;
-    padding: 2.5rem 1.5rem 2.5rem 4rem;
+    padding: 2.5rem 1.5rem 3.5rem 4rem;
 }
 
 
