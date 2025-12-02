@@ -8,6 +8,8 @@
     });
 </script>
 
+<!-- (HTML) -->
+
 {#if file.type === 'directory'}
     <div class="file-entry" on:click={() => onNavigate(file)}>
         <span class="icon">📁</span>
@@ -21,15 +23,18 @@
     </a>
 {/if}
 
-<style>
+<!-- (/HTML) -->
+
+<style lang="stylus">
   .file-entry {
-    padding: 0.25rem;
+    padding: 0.5rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     transition: background-color 0.2s;
     color: inherit; 
     text-decoration: none;
+    box-shadow: inset 0 0 2px white
   }
   
   .file-entry:hover {
