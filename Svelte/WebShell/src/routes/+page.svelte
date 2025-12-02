@@ -143,7 +143,7 @@
     padding: 1.5rem 1.5rem 1.5rem 2rem;
     font-family: monospace;
     background: none;
-    color: #ffffff99;
+    color: white;
     border: none;
     transition: all 1s easy;
   }
