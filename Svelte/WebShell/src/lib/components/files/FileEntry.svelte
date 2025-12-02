@@ -24,7 +24,7 @@
       </svg>
     </button>
     <!-- Выпадающее содержимое -->
-    <div id="myDropdown" class="dropdown-content" class:show>
+    <div class="dropdown-content" class:show>
       <a href={downloadUrl} download={file.name}>скачать</a>
       <a href="#about">удалить</a>
       <a href="#contact">что-то еще</a>
@@ -89,7 +89,8 @@
 
 .dropdown-content {
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: black;
+  color: white
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
