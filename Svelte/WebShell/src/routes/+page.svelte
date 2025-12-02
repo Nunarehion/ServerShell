@@ -126,7 +126,7 @@
     border-radius: 3rem;
     background-color: #1d1e26;
     border: 1px solid #e7e7f011;
-    color: #ffffff99;
+    color: white;
     overflow: hidden;
     transition: all 1s easy;
     
@@ -143,7 +143,6 @@
     padding: 1.5rem 1.5rem 1.5rem 2rem;
     font-family: monospace;
     background: none;
-    color: white;
     border: none;
     transition: all 1s easy;
   }
@@ -163,7 +162,7 @@
     cursor: pointer;
   }
   .open-xterm-btn {
-    background-color: #4caf50;
+    background-color: #364154;
     margin-top: 1rem;
   }
 </style>
