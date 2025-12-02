@@ -23,10 +23,10 @@
   }
 </script>
 
-<--(events)-->
+<!--(events)-->
 <svelte:windowon:click={handleOutsideClick} /> 
 
-<--(snipet)(dot-dropdown-button)-->
+<!--(snipet)(dot-dropdown-button)-->
 {#snippet DotsButton()}
   <div class="dropdown" bind:this={dropdownContainer}>
 <button class="dots-button" on:click={toggleDropdown}>
