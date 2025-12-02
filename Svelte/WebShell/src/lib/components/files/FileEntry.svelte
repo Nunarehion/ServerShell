@@ -24,7 +24,7 @@
 </script>
 
 <!--(events)-->
-<svelte:windowon:click={handleOutsideClick} /> 
+<svelte:window on:click={handleOutsideClick} /> 
 
 <!--(snipet)(dot-dropdown-button)-->
 {#snippet DotsButton()}
