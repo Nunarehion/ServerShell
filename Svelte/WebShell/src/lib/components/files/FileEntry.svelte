@@ -35,8 +35,6 @@
     color: inherit; 
     text-decoration: none;
     border-left: 1px solid #ffffff55;
-    border-radius: 8px;
-    margin: .25rem;
   }
   
   .file-entry:hover {
