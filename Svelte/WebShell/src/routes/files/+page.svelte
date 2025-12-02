@@ -231,6 +231,9 @@
 .dropdown-content {
    display: none;
 }
+.action-dropdown {
+   position: relative;
+}
 .action-dropdown:hover .dropdown-content {
    display: grid;
 }
