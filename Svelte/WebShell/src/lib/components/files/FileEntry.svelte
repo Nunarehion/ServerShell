@@ -7,19 +7,10 @@
         return '#';
     });
 
-  function toggleDropdown() {
-    alert();  document.getElementById("myDropdown").classList.toggle("show");
-  }
-  window.onclick = function(event) {
-    if (!event.target.matches('.dots-button') && !event.target.closest('.dots-button')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      for (var i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
+  //<!--(DropDown.js)-->//
+  const showDrop = $state(false)
+  function toggleDropdown(){
+     showDrop = !showDrop
   }
 </script>
 
@@ -27,7 +18,6 @@
 {#snippet DotsButton()}
   <div class="dropdown">
 <button class="dots-button" on:click={toggleDropdown}>
-
       <!--(SVG)(3 points)-->
       <svg xmlns="www.w3.org" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16"> 
           <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
@@ -35,7 +25,7 @@
     </button>
     
     <!-- Выпадающее содержимое -->
-    <div id="myDropdown" class="dropdown-content">
+    <div id="myDropdown" class="dropdown-content" class={show: showDrop}>
       <a href={downloadUrl} download={file.name}>скачать</a>
       <a href="#about">удалить</a>
       <a href="#contact">что-то еще</a>
@@ -99,13 +89,16 @@
 }
 
 .dropdown-content {
-  display: none; 
+  display: none;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   right: 0;
+}
+.dropdown-content .show {
+   display: block;
 }
 
 .dropdown-content a {
