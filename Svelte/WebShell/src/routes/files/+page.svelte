@@ -231,8 +231,8 @@
 .dropdown-content {
    display: none;
 }
-.dropdown-content.show {
-   display: grid; 
+.action-dropdown:hover .dropdown-content {
+   display: grid;
 }
 
 .dropdown-content button {
