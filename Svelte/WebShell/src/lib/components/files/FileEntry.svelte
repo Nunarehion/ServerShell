@@ -109,7 +109,7 @@
   z-index: 1;
   
   text-transform: uppercase;
-  background: var(--bg-main)
+  background: var(--dark-bg);
   border-radius: 8px;
   
 }
