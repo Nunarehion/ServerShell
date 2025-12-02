@@ -8,15 +8,27 @@
     });
 
   //<!--(DropDown.js)-->//
-  let show = $state(false)
+  let dropdownContainer;
+  let show = $state(false);
   function toggleDropdown(){
      show = !show
   }
+  function closeDropdown() {
+     show = false;
+  }
+  function handleOutsideClick(event) {
+    if (dropdownContainer && !dropdownContainer.contains(event.target)) {
+      show = false;
+    }
+  }
 </script>
 
+<--(events)-->
+<svelte:windowon:click={handleOutsideClick} /> 
 
+<--(snipet)(dot-dropdown-button)-->
 {#snippet DotsButton()}
-  <div class="dropdown">
+  <div class="dropdown" bind:this={dropdownContainer}>
 <button class="dots-button" on:click={toggleDropdown}>
       <!--(SVG)(3 points)-->
       <svg xmlns="www.w3.org" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16"> 
