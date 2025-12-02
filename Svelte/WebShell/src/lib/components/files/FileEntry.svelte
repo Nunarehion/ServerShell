@@ -24,7 +24,7 @@
       </svg>
     </button>
     <!-- Выпадающее содержимое -->
-    <div id="myDropdown" class="dropdown-content {show}">
+    <div id="myDropdown" class="dropdown-content" class:show>
       <a href={downloadUrl} download={file.name}>скачать</a>
       <a href="#about">удалить</a>
       <a href="#contact">что-то еще</a>
