@@ -34,7 +34,9 @@
     transition: background-color 0.2s;
     color: inherit; 
     text-decoration: none;
-    box-shadow: inset 0 0 .1px white
+    border-left: 1px solid #ffffff55;
+    border-radius: 8px;
+    marging: .25rem;
   }
   
   .file-entry:hover {
