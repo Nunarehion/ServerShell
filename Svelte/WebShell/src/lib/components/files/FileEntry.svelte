@@ -8,9 +8,9 @@
     });
 
   //<!--(DropDown.js)-->//
-  let showDrop = $state(false)
+  let show = $state(false)
   function toggleDropdown(){
-     showDrop = !showDrop
+     show = !show
   }
 </script>
 
@@ -24,7 +24,7 @@
       </svg>
     </button>
     <!-- Выпадающее содержимое -->
-    <div id="myDropdown" class="dropdown-content {showDrop}">
+    <div id="myDropdown" class="dropdown-content {show}">
       <a href={downloadUrl} download={file.name}>скачать</a>
       <a href="#about">удалить</a>
       <a href="#contact">что-то еще</a>
@@ -96,7 +96,7 @@
   z-index: 1;
   right: 0;
 }
-.dropdown-content .showDrop {
+.dropdown-content {
    display: block;
 }
 
@@ -111,7 +111,6 @@
   background-color: #f1f1f1;
 }
 
-/* Класс, который добавляется JavaScript при клике для отображения меню */
 .show {
   display: block;
 }
