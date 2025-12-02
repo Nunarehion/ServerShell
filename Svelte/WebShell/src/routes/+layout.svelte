@@ -71,7 +71,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-weight: 100;
+        font-weight: 300;
         padding: .5rem;
         background: none;
         box-shadow: 0 0 1px #ffffff88;
@@ -79,8 +79,9 @@
         border-radius: .25rem;
         color: #ffffff88;
         height: 100%;
-      
+        text-transform: uppercase
     }
+
     .layout 
         display: grid
         width: 100%
