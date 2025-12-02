@@ -48,7 +48,7 @@
         // <-- размеры --> //
         --sidebar-width: 76px
     }
-      :global(body) {
+      :global(html) {
         background-color: var(--light-bg);
         max-width: 100vw;
         width: 100vw;
