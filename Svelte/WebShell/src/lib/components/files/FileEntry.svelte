@@ -6,17 +6,43 @@
         }
         return '#';
     });
+
+  function toggleDropdown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+  // Закрыть выпадающее меню, если пользователь кликает за его пределами
+  window.onclick = function(event) {
+    if (!event.target.matches('.dots-button') && !event.target.closest('.dots-button')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
 </script>
 
-{#snippet DotsButton()}
-  <button class="dots-button" on:click={() => alert('Кнопка нажата')}>
-    <!--(SVG)(3 points)-->
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
-  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
-</svg>
-  </button>
-{/snippet}
 
+{#snippet DotsButtonWithDropdown()}
+  <div class="dropdown">
+    <button class="dots-button" on:click="toggleDropdown()">
+      <!--(SVG)(3 points)-->
+      <svg xmlns="www.w3.org" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16"> 
+          <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+      </svg>
+    </button>
+    
+    <!-- Выпадающее содержимое -->
+    <div id="myDropdown" class="dropdown-content">
+      <a href="#home">Главная</a>
+      <a href="#about">О нас</a>
+      <a href="#contact">Контакты</a>
+    </div>
+  </div>
+{/snippet}
 
 
 
@@ -67,4 +93,36 @@
   .dots-button {
     margin-right: 1rem;
   }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none; 
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Класс, который добавляется JavaScript при клике для отображения меню */
+.show {
+  display: block;
+}
+
 </style>
