@@ -173,6 +173,7 @@
     color: var(--clr-white);
     margin-top: 1rem;
     height: 100%;
+    max-width: 100%;
     max-height: 100svh;
   }
   .header {
