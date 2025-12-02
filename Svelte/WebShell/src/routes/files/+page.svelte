@@ -213,7 +213,7 @@
 
 .dropdown-content {
   position: absolute;
-  left: 0;
+  right: 0;
   background-color: black;
   color: white
   min-width: max-content;
