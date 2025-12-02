@@ -187,6 +187,8 @@
       display: flex;
       align-items: center;
       gap: 1rem;
+  }
+  .path-controls code{
       word-wrap: break-word;
   }
 
