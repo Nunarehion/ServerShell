@@ -59,9 +59,11 @@
   }
 </script>
 
+<!-- (HTML) -->
+
 <div class="page-container">
     <button class="open-xterm-btn" on:click={openInteractiveTerminal}>
-    Открыть интерактивный xterm
+    Открыть xterm
   </button>
   <div class="term" bind:this={termDiv}>
     <pre>{cleanOutput}</pre>
@@ -82,6 +84,8 @@
   isOpen={isTerminalOpen}
   onClose={closeInteractiveTerminal}
 />
+
+<!-- (HTML) -->
 
 <style lang="stylus">
 
