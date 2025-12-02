@@ -174,7 +174,6 @@
     margin-top: 1rem;
     height: 100%;
     max-height: 100svh;
-    overflow: scroll;
   }
   .header {
     display: flex;
@@ -232,6 +231,8 @@
   .file-list {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    overflow: scroll;
   }
   .error {
     color: red;
