@@ -105,8 +105,12 @@
   background-color: black;
   color: white
   min-width: max-content;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
   z-index: 1;
+  
+  text-transform: uppercase;
+  background: var(--bg-main)
+  border-radius: 8px;
   
 }
 .dropdown-content {
@@ -118,13 +122,13 @@
 
 .dropdown-content a {
   color: white;
-  padding: 12px 16px;
+  padding: 1rem 1.25rem;
   text-decoration: none;
   display: block;
 }
 
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
+  background-color: var(--clr-hover);
 }
 
 </style>
