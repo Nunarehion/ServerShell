@@ -8,7 +8,7 @@
     });
 
   function toggleDropdown() {
-    document.getElementById("myDropdown").classList.toggle("show");
+    alert() document.getElementById("myDropdown").classList.toggle("show");
   }
   window.onclick = function(event) {
     if (!event.target.matches('.dots-button') && !event.target.closest('.dots-button')) {
