@@ -149,7 +149,7 @@
   }
   input::placeholder {
     color: white
-    opacity: .5
+    opacity: .8
  }
 
   input:focus {
