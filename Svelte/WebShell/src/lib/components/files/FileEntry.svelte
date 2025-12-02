@@ -89,18 +89,19 @@
 
 .dropdown-content {
   position: absolute;
+  right: 0;
   background-color: black;
   color: white
-  min-width: 160px;
+  min-width: max-content;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  right: 0;
+  
 }
 .dropdown-content {
    display: none;
 }
 .dropdown-content.show {
-   display: block; 
+   display: grid; 
 }
 
 .dropdown-content a {
