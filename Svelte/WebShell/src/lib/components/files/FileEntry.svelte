@@ -23,9 +23,8 @@
           <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
       </svg>
     </button>
-    
     <!-- Выпадающее содержимое -->
-    <div id="myDropdown" class="dropdown-content" class={show: showDrop}>
+    <div id="myDropdown" class="dropdown-content {showDrop}">
       <a href={downloadUrl} download={file.name}>скачать</a>
       <a href="#about">удалить</a>
       <a href="#contact">что-то еще</a>
@@ -97,7 +96,7 @@
   z-index: 1;
   right: 0;
 }
-.dropdown-content .show {
+.dropdown-content .showDrop {
    display: block;
 }
 
