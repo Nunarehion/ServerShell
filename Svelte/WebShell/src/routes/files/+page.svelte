@@ -177,6 +177,7 @@
   }
   .header {
     display: flex;
+    max-width: 100%;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
@@ -186,6 +187,7 @@
       display: flex;
       align-items: center;
       gap: 1rem;
+      word-wrap: break-word;
   }
 
   .file-list {
