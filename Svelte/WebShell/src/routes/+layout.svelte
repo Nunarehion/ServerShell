@@ -1,26 +1,47 @@
 <script>
   import SideBar from "$lib/components/sidebar/SideBar.svelte";
   import LinkItem from "$lib/components/sidebar/LinkItem.svelte";
-  let { children } = $props();
+  // !!! ИМПОРТИРУЕМ INVALIDATEALL !!!
+  import { invalidateAll } from "$app/navigation";
+
+  let { children, data } = $props();
+  let layoutMessage = $state("");
+
+  function handleSaveSuccess(message) {
+    layoutMessage = message;
+    // Это заставит функцию load в +layout.js перезапуститься
+    invalidateAll();
+    setTimeout(() => (layoutMessage = ""), 3000);
+  }
+  //  <header class="main-header-nav">
+  //   <!-- Статические ссылки -->
+  //   <a href="/">Главная</a>
+  //   <a href="/files">Файлы</a>
+
+  //   <!-- Динамические закладки (с защитой от undefined) -->
+  //   {#each data.bookmarks ?? [] as bookmark (bookmark.url)}
+  //     <!-- !!! Просто тег <a> !!! -->
+  //     <a href={bookmark.url}>{bookmark.url}</a>
+  //   {/each}
+  // </header>
 </script>
 
 <!-- (HTML) -->
 
 <div class="layout">
-  <!-- Первая колонка -->
-  <SideBar class="sidebar">
+  <SideBar class="sidebar" onSaveSuccess={handleSaveSuccess}>
     <hr style="margin: 1rem 0;" />
     <LinkItem url="/" icon="/icon-atom.svg"></LinkItem>
     <hr style="margin: 1rem 0;" />
     <div class="items">
       <LinkItem url="/files" icon="/icon-folder.svg"></LinkItem>
-      <LinkItem url="/files" icon="/icon-folder.svg"></LinkItem>
-      <LinkItem url="/files" icon="/icon-folder.svg"></LinkItem>
     </div>
   </SideBar>
 
-  <!-- Вторая колонка -->
   <main class="content-area">
+    {#if layoutMessage}
+      <div class="layout-notification">{layoutMessage}</div>
+    {/if}
     {@render children()}
   </main>
 </div>
@@ -100,5 +121,28 @@
             padding: 1rem
             background: var(--light-bg)
             
-        
+  header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: var(--sidebar-width); /* Привязка к правому краю сайдбара */
+    height: 4rem; /* Фиксированная высота хедера */
+    background: var(--dark-bg); /* Темный фон */
+    
+    display: flex;
+    align-items: center; /* Выравнивание ссылок по центру вертикали */
+    padding: 0 1rem; /* Горизонтальные отступы */
+    gap: 1rem; /* Расстояние между ссылками */
+  }
+
+  /* Стилизуем теги <a> внутри <header> */
+  header a {
+    text-decoration: none;
+    color: var(--clr-gray);
+    padding: 0.5rem 0;
+  }
+
+  header a:hover {
+    color: var(--clr-white);
+  }
 </style>
