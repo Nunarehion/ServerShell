@@ -1,6 +1,7 @@
 import { json } from '@sveltejs/kit';
 import fsp from 'fs/promises';
 import fs from 'fs';
+import mime from 'mime-types'; // <-- ДОБАВЛЕНО: Импорт библиотеки MIME-типов
 
 import { pipeline } from 'stream'; 
 import path from 'path';
@@ -8,13 +9,15 @@ import process from 'process';
 
 const BASE_DIR = process.cwd();
 
-
 export async function GET({ url }) {
-
     const targetPath = url.searchParams.get('path') || '/';
-    const downloadFile = url.searchParams.get('download');
-    if (downloadFile) {
-        const fileAbsPath = path.resolve(BASE_DIR, targetPath, downloadFile);
+    // Изменена логика GET для поддержки 'открытия' (inline) и 'скачивания' (attachment)
+    const fileToServe = url.searchParams.get('file'); 
+    const mode = url.searchParams.get('mode') || 'inline'; // По умолчанию 'inline'
+
+    if (fileToServe) {
+        // Используем 'fileToServe' вместо 'downloadFile'
+        const fileAbsPath = path.resolve(BASE_DIR, targetPath, fileToServe);
 
         try {
             const stats = await fsp.stat(fileAbsPath);
@@ -22,23 +25,30 @@ export async function GET({ url }) {
                 return json({ error: 'Это не файл или файл не существует.' }, { status: 400 });
             }
 
+            // Определяем MIME-тип файла динамически
+            const contentType = mime.lookup(fileAbsPath) || 'application/octet-stream';
+            const disposition = mode === 'download' ? 'attachment' : 'inline';
+
             const headers = {
-                'Content-Disposition': `attachment; filename="${path.basename(fileAbsPath)}"`,
-                'Content-Type': 'application/octet-stream',
+                'Content-Disposition': `${disposition}; filename="${path.basename(fileAbsPath)}"`,
+                'Content-Type': contentType,
                 'Content-Length': stats.size,
+                'X-Content-Type-Options': 'nosniff' // Заголовок безопасности
             };
 
             return new Response(fs.createReadStream(fileAbsPath), { headers });
 
         } catch (error) {
             console.error(error);
-            return json({ error: `Ошибка при скачивании: ${error.message}` }, { status: 500 });
+            return json({ error: `Ошибка при обработке файла: ${error.message}` }, { status: 500 });
         }
     }
+    
+    // Логика листинга директорий остается прежней
     try {
         const absPath = path.resolve(BASE_DIR, targetPath);
         const entries = await fsp.readdir(absPath, { withFileTypes: true });
-
+        // ... (остальной код листинга директорий)
         const files = entries.map(entry => {
             const entryPathRel = path.join(targetPath, entry.name);
             return {
@@ -64,6 +74,7 @@ export async function GET({ url }) {
     }
 }
 
+// ... (Функции POST и PUT остаются без изменений) ...
 
 export async function POST({ request }) {
     const { action, path: targetPath, name } = await request.json();
@@ -110,5 +121,32 @@ export async function PUT({ request }) {
     } catch (error) {
         console.error(error);
         return json({ error: `Ошибка загрузки: ${error.message}` }, { status: 500 });
+    }
+}
+
+// <-- ДОБАВЛЕНО: НОВАЯ ФУНКЦИЯ ДЛЯ РЕДАКТИРОВАНИЯ (СОХРАНЕНИЯ КОНТЕНТА) -->
+export async function PATCH({ request }) {
+    try {
+        // Ожидаем тело запроса в формате JSON: { path: '/path/to/file.txt', content: 'Новое содержимое файла' }
+        const { path: targetPath, content } = await request.json();
+
+        if (!targetPath || content === undefined) {
+            return json({ error: 'Не указан путь к файлу или его содержимое.' }, { status: 400 });
+        }
+
+        // Защита от выхода за пределы BASE_DIR (опционально, но рекомендуется)
+        const absPath = path.resolve(BASE_DIR, targetPath);
+        if (!absPath.startsWith(BASE_DIR)) {
+             return json({ error: 'Несанкционированный доступ к файловой системе.' }, { status: 403 });
+        }
+
+        // Используем fsp.writeFile для перезаписи файла новым содержимым
+        await fsp.writeFile(absPath, content, 'utf-8');
+
+        return json({ success: true, message: `Файл ${path.basename(absPath)} успешно обновлен.` });
+
+    } catch (error) {
+        console.error(error);
+        return json({ error: `Ошибка при сохранении файла: ${error.message}` }, { status: 500 });
     }
 }
