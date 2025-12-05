@@ -13,15 +13,18 @@
     setTimeout(() => (layoutMessage = ""), 3000);
   }
 onMount(() => {
-    safeBookmarks = (data?.bookmarks ?? []).filter(b => b && typeof b.url === 'string');
+    safeBookmarks = (data?.bookmarks ?? [])
+      .filter(b => b && typeof b.url === 'string')
+      .map((b, i) => ({ id: b.id ?? i, url: b.url, icon: b.icon ?? '/default-icon.svg' }));
   });
+
   //  <header class="main-header-nav">
   //   <!-- Статические ссылки -->
   //   <a href="/">Главная</a>
   //   <a href="/files">Файлы</a>
 
   //   <!-- Динамические закладки (с защитой от undefined) -->
-  //   {#each data.bookmarks ?? [] as bookmark (bookmark.url)}
+  //   {#each safeBookmarks ?? [] as bookmark (bookmark.url)}
   //     <!-- !!! Просто тег <a> !!! -->
   //     <a href={bookmark.url}>{bookmark.url}</a>
   //   {/each}
@@ -33,9 +36,9 @@ onMount(() => {
   <!-- Статические ссылки -->
   <a href="/">Главная</a>
    <a href="/files">Файлы</a>
-{#each data.bookmarks ?? [] as bookmark (bookmark.url)}
-       <a href={bookmark.url}>{bookmark.url}</a>
-     {/each}
+  {#each safeBookmarks as bookmark (bookmark.id)}
+    <a href={bookmark.url}>{bookmark.url}</a>
+  {/each}
   
    </header>
 
