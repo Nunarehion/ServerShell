@@ -31,9 +31,7 @@
   <a href="/">Главная</a>
    <a href="/files">Файлы</a>
 
-  {#each data.bookmarks ?? [] as bookmark (bookmark.url)}
-   <a href={bookmark.url}>{bookmark.url}</a>
-    {/each}
+  
    </header>
 
 <div class="layout">
