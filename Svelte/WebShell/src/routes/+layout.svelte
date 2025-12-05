@@ -27,6 +27,17 @@
 </script>
 
 <!-- (HTML) -->
+   <header class="main-header-nav">
+  <!-- Статические ссылки -->
+  <a href="/">Главная</a>
+   <a href="/files">Файлы</a>
+
+   <!-- Динамические закладки (с защитой от undefined) -->
+  {#each data.bookmarks ?? [] as bookmark (bookmark.url)}
+    <!-- !!! Просто тег <a> !!! -->
+   <a href={bookmark.url}>{bookmark.url}</a>
+    {/each}
+   </header>
 
 <div class="layout">
   <SideBar class="sidebar" onSaveSuccess={handleSaveSuccess}>
