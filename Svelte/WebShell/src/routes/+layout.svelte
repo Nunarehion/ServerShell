@@ -4,7 +4,6 @@
   import LinkItem from "$lib/components/sidebar/LinkItem.svelte";
   import { invalidateAll } from "$app/navigation";
 
-  export let data;
   let safeBookmarks = (data?.bookmarks ?? [])
     .filter(b => b && typeof b.url === 'string')
     .map((b, i) => ({ id: b.id ?? i, url: b.url, icon: b.icon ?? '/default-icon.svg' }));
