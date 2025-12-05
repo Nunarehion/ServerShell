@@ -25,14 +25,6 @@
   });
 </script>
 
-<header class="main-header-nav">
-  <a href="/">Главная</a>
-  <a href="/files">Файлы</a>
-
-  {#each safeBookmarks as bookmark (bookmark.id)}
-    <a href={bookmark.url}>{bookmark.url}</a>
-  {/each}
-</header>
 
 
 <div class="layout">
