@@ -31,9 +31,7 @@
   <a href="/">Главная</a>
    <a href="/files">Файлы</a>
 
-   <!-- Динамические закладки (с защитой от undefined) -->
   {#each data.bookmarks ?? [] as bookmark (bookmark.url)}
-    <!-- !!! Просто тег <a> !!! -->
    <a href={bookmark.url}>{bookmark.url}</a>
     {/each}
    </header>
@@ -135,17 +133,15 @@
     position: fixed;
     top: 0;
     right: 0;
-    left: var(--sidebar-width); /* Привязка к правому краю сайдбара */
-    height: 4rem; /* Фиксированная высота хедера */
-    background: var(--dark-bg); /* Темный фон */
+    left: var(--sidebar-width);
+    height: 4rem;
+    background: var(--dark-bg);
     
     display: flex;
     align-items: center; /* Выравнивание ссылок по центру вертикали */
     padding: 0 1rem; /* Горизонтальные отступы */
     gap: 1rem; /* Расстояние между ссылками */
   }
-
-  /* Стилизуем теги <a> внутри <header> */
   header a {
     text-decoration: none;
     color: var(--clr-gray);
