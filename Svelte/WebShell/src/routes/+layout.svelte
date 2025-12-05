@@ -1,46 +1,39 @@
 <script>
+  import { onMount } from 'svelte';
   import SideBar from "$lib/components/sidebar/SideBar.svelte";
   import LinkItem from "$lib/components/sidebar/LinkItem.svelte";
   import { invalidateAll } from "$app/navigation";
 
-  let { children, data } = $props();
-  let layoutMessage = $state("");
+  export let data;
+  let safeBookmarks = (data?.bookmarks ?? [])
+    .filter(b => b && typeof b.url === 'string')
+    .map((b, i) => ({ id: b.id ?? i, url: b.url, icon: b.icon ?? '/default-icon.svg' }));
+
+  let layoutMessage = '';
 
   function handleSaveSuccess(message) {
     layoutMessage = message;
-    // Это заставит функцию load в +layout.js перезапуститься
     invalidateAll();
     setTimeout(() => (layoutMessage = ""), 3000);
   }
-onMount(() => {
+
+  onMount(() => {
+    // обновляем на клиенте, если данные изменились
     safeBookmarks = (data?.bookmarks ?? [])
       .filter(b => b && typeof b.url === 'string')
       .map((b, i) => ({ id: b.id ?? i, url: b.url, icon: b.icon ?? '/default-icon.svg' }));
   });
-
-  //  <header class="main-header-nav">
-  //   <!-- Статические ссылки -->
-  //   <a href="/">Главная</a>
-  //   <a href="/files">Файлы</a>
-
-  //   <!-- Динамические закладки (с защитой от undefined) -->
-  //   {#each safeBookmarks ?? [] as bookmark (bookmark.url)}
-  //     <!-- !!! Просто тег <a> !!! -->
-  //     <a href={bookmark.url}>{bookmark.url}</a>
-  //   {/each}
-  // </header>
 </script>
 
-<!-- (HTML) -->
-   <header class="main-header-nav">
-  <!-- Статические ссылки -->
+<header class="main-header-nav">
   <a href="/">Главная</a>
-   <a href="/files">Файлы</a>
+  <a href="/files">Файлы</a>
+
   {#each safeBookmarks as bookmark (bookmark.id)}
     <a href={bookmark.url}>{bookmark.url}</a>
   {/each}
-  
-   </header>
+</header>
+
 
 <div class="layout">
   <SideBar class="sidebar" onSaveSuccess={handleSaveSuccess}>
