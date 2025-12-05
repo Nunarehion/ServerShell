@@ -3,6 +3,7 @@
   import SideBar from "$lib/components/sidebar/SideBar.svelte";
   import LinkItem from "$lib/components/sidebar/LinkItem.svelte";
   import { invalidateAll } from "$app/navigation";
+   let data =$props()
 
   let safeBookmarks = (data?.bookmarks ?? [])
     .filter(b => b && typeof b.url === 'string')
