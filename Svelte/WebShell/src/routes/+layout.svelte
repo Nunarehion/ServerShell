@@ -1,7 +1,6 @@
 <script>
   import SideBar from "$lib/components/sidebar/SideBar.svelte";
   import LinkItem from "$lib/components/sidebar/LinkItem.svelte";
-  // !!! ИМПОРТИРУЕМ INVALIDATEALL !!!
   import { invalidateAll } from "$app/navigation";
 
   let { children, data } = $props();
