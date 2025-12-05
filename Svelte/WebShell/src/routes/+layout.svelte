@@ -12,6 +12,9 @@
     invalidateAll();
     setTimeout(() => (layoutMessage = ""), 3000);
   }
+onMount(() => {
+    safeBookmarks = (data?.bookmarks ?? []).filter(b => b && typeof b.url === 'string');
+  });
   //  <header class="main-header-nav">
   //   <!-- Статические ссылки -->
   //   <a href="/">Главная</a>
@@ -30,7 +33,9 @@
   <!-- Статические ссылки -->
   <a href="/">Главная</a>
    <a href="/files">Файлы</a>
-
+{#each data.bookmarks ?? [] as bookmark (bookmark.url)}
+       <a href={bookmark.url}>{bookmark.url}</a>
+     {/each}
   
    </header>
 
