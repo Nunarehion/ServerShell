@@ -5,10 +5,7 @@
   import { invalidateAll } from "$app/navigation";
    let {data, children} =$props()
 
-  let safeBookmarks = (data?.bookmarks ?? [])
-    .filter(b => b && typeof b.url === 'string')
-    .map((b, i) => ({ id: b.id ?? i, url: b.url, icon: b.icon ?? '/default-icon.svg' }));
-
+  
   let layoutMessage = '';
 
   function handleSaveSuccess(message) {
