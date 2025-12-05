@@ -17,12 +17,7 @@
     setTimeout(() => (layoutMessage = ""), 3000);
   }
 
-  onMount(() => {
-    // обновляем на клиенте, если данные изменились
-    safeBookmarks = (data?.bookmarks ?? [])
-      .filter(b => b && typeof b.url === 'string')
-      .map((b, i) => ({ id: b.id ?? i, url: b.url, icon: b.icon ?? '/default-icon.svg' }));
-  });
+  
 </script>
 
 
