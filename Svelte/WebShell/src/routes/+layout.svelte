@@ -29,6 +29,11 @@
     <hr style="margin: 1rem 0;" />
     <div class="items">
       <LinkItem url="/files" icon="/icon-folder.svg"></LinkItem>
+    <div style="position: fixed; top:0; left:0; color:white; background: black; display: grid; gap: 1rem">
+{#each data.bookmarks as mark}
+   <a href="{mark.url}"> {mark.url.split("/").at(-1)}</a>
+{/each}
+</div>
     </div>
   </SideBar>
 
