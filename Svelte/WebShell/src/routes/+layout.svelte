@@ -19,7 +19,7 @@
 
 <div style="position: fixed; top:0; left:0; color:white; background: black; display: grid; gap: 1rem">
 {#each data.bookmarks as mark}
-   <a href="files/{mark.url}"> {mark.url.split("/").at(-1)}</a>
+   <a href="{mark.url}"> {mark.url.split("/").at(-1)}</a>
 {/each}
 </div>
 <div class="layout">
