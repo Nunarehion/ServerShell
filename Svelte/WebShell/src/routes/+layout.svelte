@@ -17,7 +17,7 @@
 </script>
 
 
-<div style="position: fixed; top:0; left:0; color:white; background: black; display: grid; gap: .25rem">
+<div style="position: fixed; top:0; left:0; color:white; background: black; display: grid; gap: 1rem">
 {#each data.bookmarks as mark}
    <a href="mark.url">{mark.url.split("/")[-1]}</a>
 {/each}
