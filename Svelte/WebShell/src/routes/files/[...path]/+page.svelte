@@ -279,7 +279,7 @@
     margin-top: 1rem;
     height: 100%;
     max-width: 100%;
-    max-height: calc(100svh - 3rem);
+    max-height: calc(30rem);
   }
   .header {
     display: flex;
