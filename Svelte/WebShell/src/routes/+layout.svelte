@@ -18,7 +18,7 @@
 
 
 <div style="position: fixed; top:0; left:0; color:white; background: black">
-{data.bookmarks}
+{JSON.stringify(data.bookmarks)}
 </div>
 <div class="layout">
   <SideBar class="sidebar" onSaveSuccess={handleSaveSuccess}>
