@@ -17,10 +17,9 @@
 </script>
 
 
-<div style="position: fixed; top:0; left:0; color:white; background: black">
-{JSON.stringify(data.bookmarks)}
+<div style="position: fixed; top:0; left:0; color:white; background: black; display: grid; gap: .25rem">
 {#each data.bookmarks as mark}
-   <div>{mark.url}</div>
+   <a>{mark.url}</a>
 {/each}
 </div>
 <div class="layout">
