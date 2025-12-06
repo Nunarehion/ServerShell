@@ -267,17 +267,7 @@
 </div>
 
 
-<div class="file-viewer">
-  <div class="header">
-    <button on:click={goBackToFileManager}>Назад</button>
-    <h2>Просмотр: {data.filePath}</h2>
-    <button on:click={saveFile}>Сохранить</button>
-  </div>
-  {#if message}
-    <p class="status-message">{message}</p>
-  {/if}
-  <textarea bind:value={fileContent}></textarea>
-</div>
+
 
 <!-- (HTML) -->
 
