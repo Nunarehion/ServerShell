@@ -19,6 +19,9 @@
 
 <div style="position: fixed; top:0; left:0; color:white; background: black">
 {JSON.stringify(data.bookmarks)}
+{#each data.bookmarks as mark}
+   <div>{mark.url}</div>
+{/each}
 </div>
 <div class="layout">
   <SideBar class="sidebar" onSaveSuccess={handleSaveSuccess}>
