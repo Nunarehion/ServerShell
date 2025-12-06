@@ -13,12 +13,11 @@
     invalidateAll();
     setTimeout(() => (layoutMessage = ""), 3000);
   }
-
   
 </script>
 
 
-
+{data.bookmarks}
 <div class="layout">
   <SideBar class="sidebar" onSaveSuccess={handleSaveSuccess}>
     <hr style="margin: 1rem 0;" />
