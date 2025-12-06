@@ -17,7 +17,9 @@
 </script>
 
 
+<div style="position: fixed; top:0; left:0; color:white; background: black">
 {data.bookmarks}
+</div>
 <div class="layout">
   <SideBar class="sidebar" onSaveSuccess={handleSaveSuccess}>
     <hr style="margin: 1rem 0;" />
