@@ -99,7 +99,7 @@
   }
   
   // Фильтрованные закладки
-  const filteredBookmarks = $derived(() => {
+  const filteredBookmarks = $derived.by(() => {
     if (!data.bookmarks) return [];
     
     let filtered = data.bookmarks.filter(bookmark => {
