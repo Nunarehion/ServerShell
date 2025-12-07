@@ -343,7 +343,7 @@
     --second-bg: #17181f
     --dark-bg: #101218
     --light-bg: #1d1e26
-    --clr-border: rgba(255, 255, 255, 0.07)
+    --clr-border: rgba(255, 255, 255, 0.1)
     --clr-gray: #adafb8
     --clr-white: white
     --clr-red: #e11d48
@@ -568,7 +568,7 @@
     .bookmarks-search 
       padding: 16px 20px
       position: relative
-      border-bottom: 0.5px solid var(--clr-gray)
+      border-bottom: 0.5px solid var(--clr-border)
       
       svg 
         position: absolute
