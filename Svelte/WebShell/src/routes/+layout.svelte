@@ -427,7 +427,6 @@
     background: var(--dark-bg)
     display: flex
     align-items: center
-    padding: 0 1rem
     z-index: 100
     border-bottom: 1px solid var(--clr-border)
   
@@ -436,7 +435,6 @@
     border: none
     color: var(--clr-white)
     padding: 8px 16px
-    border-radius: 8px
     cursor: pointer
     font-size: 1.4rem
     display: flex
@@ -445,8 +443,6 @@
     width: 100%
     justify-content: center
     
-    &:hover 
-      background: var(--clr-gray)
   
   // КНОПКА В САЙДБАРЕ (ДЕСКТОП)
   .bookmarks-trigger 
