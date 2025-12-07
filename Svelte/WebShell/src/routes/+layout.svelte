@@ -1260,7 +1260,4 @@
   .bookmark-item 
     animation: fadeIn 0.3s ease forwards
     
-    @for i from 1 through 20 
-      &:nth-child({i}) 
-        animation-delay: (i * 0.05)s
 </style>
