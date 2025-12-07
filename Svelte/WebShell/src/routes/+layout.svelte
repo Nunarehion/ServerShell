@@ -509,7 +509,7 @@
     // Хедер с ручкой и крестиком
     .sheet-header 
       padding: 16px 20px 8px
-      border-bottom: 0.5px solid var(--clr-gray)
+      border-bottom: 0.5px solid var(--clr-border)
       display: flex
       align-items: center
       justify-content: space-between
@@ -620,7 +620,7 @@
       display: flex
       padding: 12px 20px
       gap: 8px
-      border-bottom: 0.5px solid var(--clr-gray)
+      border-bottom: 0.5px solid var(--clr-border)
       
       button 
         flex: 1
@@ -688,7 +688,7 @@
         display: flex
         align-items: center
         padding: 12px 0
-        border-bottom: 0.5px solid var(--clr-gray)
+        border-bottom: 0.5px solid var(--clr-border)
         
         &:last-child 
           border-bottom: none
@@ -762,7 +762,7 @@
     // Футер с кнопкой добавления
     .sheet-footer 
       padding: 16px 20px
-      border-top: 0.5px solid var(--clr-gray)
+      border-top: 0.5px solid var(--clr-border)
       
       .add-bookmark-btn 
         width: 100%
