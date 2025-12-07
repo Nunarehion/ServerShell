@@ -52,7 +52,8 @@
       event.stopPropagation();
       event.preventDefault();
     }
-    
+    const isCongirmed = window.confirm("Удалить эту закладку?")
+    if (!isCongirmed) {return;}
     try {
       await fetch('/api/bookmarks', {
         method: 'DELETE',
