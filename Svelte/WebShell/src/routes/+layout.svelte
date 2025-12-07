@@ -155,6 +155,7 @@
     <!-- Мобильный хедер с кнопкой закладок -->
     {#if isMobile}
       <div class="mobile-header">
+        <LinkItem url="/" icon="/icon-atom.svg"></LinkItem>
         <button 
           class="mobile-menu-btn"
           on:click={() => showBookmarks = !showBookmarks}
