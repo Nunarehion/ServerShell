@@ -31,8 +31,12 @@ export async function POST({ request }) {
         const data = await fsp.readFile(BOOKMARKS_FILE, 'utf-8');
         const bookmarks = JSON.parse(data);
 
-        bookmarks.push({ url, icon: icon || '/default-icon.svg' });
+        // Проверяем, нет ли уже такой закладки
+        if (bookmarks.some(bookmark => bookmark.url === url)) {
+            return json({ error: 'Закладка уже существует.' }, { status: 400 });
+        }
 
+        bookmarks.push({ url, icon: icon || '/default-icon.svg' });
 
         await fsp.writeFile(BOOKMARKS_FILE, JSON.stringify(bookmarks, null, 2), 'utf-8');
 
@@ -45,5 +49,36 @@ export async function POST({ request }) {
         }
         console.error(error);
         return json({ error: 'Не удалось сохранить закладку.' }, { status: 500 });
+    }
+}
+
+export async function DELETE({ request }) {
+    try {
+        const { url } = await request.json();
+        
+        if (!url) {
+            return json({ error: 'URL не указан.' }, { status: 400 });
+        }
+
+        const data = await fsp.readFile(BOOKMARKS_FILE, 'utf-8');
+        let bookmarks = JSON.parse(data);
+
+        const initialLength = bookmarks.length;
+        bookmarks = bookmarks.filter(bookmark => bookmark.url !== url);
+        
+        if (bookmarks.length === initialLength) {
+            return json({ error: 'Закладка не найдена.' }, { status: 404 });
+        }
+
+        await fsp.writeFile(BOOKMARKS_FILE, JSON.stringify(bookmarks, null, 2), 'utf-8');
+
+        return json({ success: true, message: 'Закладка удалена.' });
+
+    } catch (error) {
+        if (error.code === 'ENOENT') {
+            return json({ error: 'Файл закладок не найден.' }, { status: 404 });
+        }
+        console.error(error);
+        return json({ error: 'Не удалось удалить закладку.' }, { status: 500 });
     }
 }
