@@ -215,7 +215,7 @@
               <img 
                 src={getFaviconUrl(bookmark.url)} 
                 alt="" 
-                on:error={(e) => e.target.style.display = 'none'}
+                
               />
             </a>
           {/each}
@@ -243,10 +243,7 @@
               <img 
                 src={getFaviconUrl(bookmark.url)} 
                 alt=""
-                on:error={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextElementSibling?.style.display = 'flex';
-                }}
+                
               />
               <span class="favicon-fallback">
                 {getDomainFromUrl(bookmark.url).charAt(0).toUpperCase()}
@@ -460,10 +457,8 @@
                 <img 
                   src={getFaviconUrl(bookmark.url)} 
                   alt=""
-                  on:error={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextElementSibling?.style.display = 'flex';
-                  }}
+                  
+                    
                 />
                 <div class="icon-fallback">
                   {getDomainFromUrl(bookmark.url).charAt(0).toUpperCase()}
