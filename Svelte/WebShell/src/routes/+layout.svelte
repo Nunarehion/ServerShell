@@ -211,6 +211,7 @@
     <!-- Список закладок -->
     <div class="bookmarks-list">
       {JSON.stringify(data.bookmarks)}
+      {JSON.stringify(filteredBookmarks)}
       {#if data.bookmarks.length == 0}
         <div class="empty-state">
           {#if searchQuery}
@@ -226,6 +227,7 @@
           {/if}
         </div>
       {:else}
+         вывожу
         {#each filteredBookmarks as bookmark}
           <div class="bookmark-item">
             <a 
