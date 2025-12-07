@@ -73,10 +73,8 @@
   // Фильтрация закладок по поиску
   const filteredBookmarks = $derived(() => {
     if (!data.bookmarks) return [];
-    alert(JSON.stringify(data.bookmarks))
     
     if (!searchQuery.trim()) return data.bookmarks;
-    alert("search")
     
     const query = searchQuery.toLowerCase();
     return data.bookmarks.filter(bookmark => 
@@ -212,7 +210,7 @@
     
     <!-- Список закладок -->
     <div class="bookmarks-list">
-      {#if filteredBookmarks.length === 0}
+      {#if filteredBookmarks.length == 0}
         <div class="empty-state">
           {#if searchQuery}
             <svg width="48" height="48" viewBox="0 0 24 24">
