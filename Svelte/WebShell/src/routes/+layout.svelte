@@ -210,7 +210,7 @@
     
     <!-- Список закладок -->
     <div class="bookmarks-list">
-      {#if filteredBookmarks.length == 0}
+      {#if data.bookmarks.length == 0}
         <div class="empty-state">
           {#if searchQuery}
             <svg width="48" height="48" viewBox="0 0 24 24">
