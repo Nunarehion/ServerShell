@@ -73,7 +73,7 @@
   // Фильтрация закладок по поиску
   const filteredBookmarks = $derived(() => {
     if (!data.bookmarks) return [];
-    alert(JSON.stringify(data.bookmarks)
+    alert(JSON.stringify(data.bookmarks))
     
     if (!searchQuery.trim()) return data.bookmarks;
     alert("search")
