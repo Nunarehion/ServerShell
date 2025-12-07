@@ -343,6 +343,7 @@
     --second-bg: #17181f
     --dark-bg: #101218
     --light-bg: #1d1e26
+    --clr-border: rgba(255, 255, 255, 0.07)
     --clr-gray: #adafb8
     --clr-white: white
     --clr-red: #e11d48
@@ -361,7 +362,7 @@
   :global(hr) 
     border: none
     height: 0.5px
-    background: var(--clr-gray)
+    background: var(--clr-border)
   
   // ГЛОБАЛЬНЫЕ СТИЛИ ДЛЯ КНОПОК (из твоего оригинального кода)
   :global(button) 
@@ -427,7 +428,7 @@
     align-items: center
     padding: 0 1rem
     z-index: 100
-    border-bottom: 1px solid var(--clr-gray)
+    border-bottom: 1px solid var(--clr-border)
   
   .mobile-menu-btn 
     background: var(--clr-hover)
