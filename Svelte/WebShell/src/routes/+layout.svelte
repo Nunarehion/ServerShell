@@ -433,6 +433,7 @@
     z-index: 100
     border-bottom: 1px solid var(--clr-border)
     button.logo
+      display: none
       width: 100%
       height: 100%
       padding: .25rem
