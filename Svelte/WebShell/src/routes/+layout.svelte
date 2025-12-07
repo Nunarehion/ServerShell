@@ -405,7 +405,7 @@
     
     @media (max-width: 767px) 
       grid-column: 1 / 2
-      padding-top: 60px // Для мобильного хедера
+      padding-top: 60px
   
   .page-content 
     padding: 1rem
@@ -453,17 +453,13 @@
     display: flex
     align-items: center
     gap: 10px
-    padding: 10px
+    
     background: var(--dark-bg)
     border: none
-    border-radius: 8px
     color: var(--clr-white)
     cursor: pointer
     width: 100%
     margin-top: 1rem
-    
-    &:hover 
-      background: var(--clr-hover)
     
     span 
       font-size: 1.3rem
