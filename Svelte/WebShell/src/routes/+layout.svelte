@@ -210,6 +210,7 @@
     
     <!-- Список закладок -->
     <div class="bookmarks-list">
+      {JSON.stringify(data.bookmarks)}
       {#if data.bookmarks.length == 0}
         <div class="empty-state">
           {#if searchQuery}
